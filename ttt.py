@@ -3,8 +3,11 @@ from tttlib import *
 def main():
    T=genBoard()
    gameNotOver= True
+   
    while gameNotOver:
       printBoard(T)
+      
+#Player is x, game starts by X choosing available spot and displaying game state.
       moveX = input("X move?")
       m=int(moveX)
       if m<-1 or m>9:
@@ -22,7 +25,7 @@ def main():
              gameNotOver = False
       printBoard(T)
 
-#o's turn below
+#o's (Computer's) turn below
       if int(genOpenMove(T))== -1:
           return 1
       elif getWinningMove(T,2)!=-1:
